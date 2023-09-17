@@ -1,8 +1,9 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from tortoise.contrib.pydantic import pydantic_model_creator
+from app.models.todo import Todo
 
-GetTodo = pydantic_model_creator(None, name="Todo")
+GetTodo = pydantic_model_creator(Todo, name="Todo")
 
 
 class PostTodo(BaseModel):
